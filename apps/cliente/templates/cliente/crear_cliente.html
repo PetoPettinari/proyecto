@@ -1,0 +1,12 @@
+{% extends 'template.html' %}
+
+{% block contenido %}
+    <h1> CREAR CLIENTE</h1>
+
+    <form action="" method="post"
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="CREAR CLIENTE"
+    </form>
+
+{%  endblock contenido %}
