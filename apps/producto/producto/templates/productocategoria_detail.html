@@ -1,0 +1,18 @@
+{% extends 'producto/index.html' %}
+
+
+{% block title %} Detalle de Categorías de Productos {% endblock title %}
+
+{% block content_producto %}
+
+    <ul>
+        <li>
+            <p><strong>Nombre:</strong> {{ object.nombre }}</p>
+            <p><strong>Detalle:</strong> {{ object.descripcion }}</p>
+        </li>
+    </ul>
+
+    {% include 'producto/index_back.html' %}
+
+
+{% endblock content_producto %}

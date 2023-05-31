@@ -1,0 +1,15 @@
+{% extends 'producto/index.html' %}
+
+
+{% block title %} Categorías de Productos {% endblock title %}
+
+{% block content_producto %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submi" class="btn btn-success">Guardar</button>
+    </form>
+
+    {% include 'producto/index_back.html' %}
+
+{% endblock content_producto %}

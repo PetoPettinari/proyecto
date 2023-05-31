@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "ms-python.black-formatter",
+        "almahdi.code-django",
+        "mhutchie.git-graph",
+        "visualstudioexptteam.vscodeintellicode-completions",
+        "ms-python.isort",
+        "pkief.material-icon-theme",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "qwtel.sqlite-viewer"
+    ]
+}
