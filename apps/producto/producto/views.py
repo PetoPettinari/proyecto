@@ -34,8 +34,6 @@ class ProductoCategoriaList(ListView):
     model = models.ProductoCategoria
 
     def get_queryset(self):
-        """Devuelve los productos de la categoria escrita por el usuario en el formulario de búsqueda"""
-        # Si la búsqueda tiene algún texto introducido, devuelve todos los productos que contengan dicho texto
         if self.request.GET.get("consulta"):
             query = self.request.GET.get("consulta")
             object_list = models.ProductoCategoria.objects.filter(
