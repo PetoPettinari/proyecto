@@ -5,7 +5,7 @@ from . import models
 
 class Autorform(forms.ModelForm):
     class Meta:
-        model = models.Autor
+        model = models.Cliente
         fields = "__all__"
 
 
