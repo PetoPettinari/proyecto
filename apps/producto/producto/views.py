@@ -39,7 +39,6 @@ class ProductoCategoriaList(ListView):
             object_list = models.ProductoCategoria.objects.filter(
                 nombre__icontains=query
             )
-        # Si no, devuelve todos los productos
         else:
             object_list = models.ProductoCategoria.objects.all()
         return object_list
