@@ -142,7 +142,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #! Login
 
 LOGIN_URL = "home:login"
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "home:index"
 
 
 #! Media
