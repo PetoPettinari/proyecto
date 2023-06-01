@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+
 from venta import models
 
 from . import forms
@@ -12,10 +13,10 @@ from . import forms
 @login_required
 def index(request: HttpRequest) -> HttpResponse:
     if request.user.is_authenticated:
-        # vendedor = models.Vendedor.objects.filter(user=request.user).first()
-        vendedor = models.Vendedor.objects.filter(user=request.user.pk)
-        if vendedor:
-            return render(request, "home/index.html", {"url": vendedor[0].avatar.url})
+        # Vendedor = models.Vendedor.objects.filter(user=request.user).first()
+        Vendedor = models.Vendedor.objects.filter(user=request.user.pk)
+        if Vendedor:
+            return render(request, "home/index.html", {"url": Vendedor[0].avatar.url})
     return render(request, "home/index.html")
 
 
