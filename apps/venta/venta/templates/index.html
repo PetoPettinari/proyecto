@@ -1,5 +1,30 @@
 {% extends 'home/base.html' %}
 
+
 {% block content %}
-    <h1>Venta</h1>
+
+    <h1 class="shadow-lg text-center">App Venta</h1>
+    <div class="container mt-lg-3">
+
+        <h3 class="pb-lg-3">
+            {% block title %}
+                Venta de Productos
+            {% endblock title %}
+        </h3>
+
+        {% block content_producto %}
+        
+        {% comment  %}
+        <!-- <div class="d-grid gap-3">
+            {% if user.is_staff %}
+            <a href="{% url 'producto:productocategoria_create' %}" class="btn btn-primary">Crear</a>
+            {% endif %}
+            <a href="{% url 'producto:productocategoria_list' %}" class="btn btn-primary">Listar</a> <br> 
+        </div> -->
+        {% endcomment %}
+        {% endblock content_producto %}
+        <div class="d-grid gap-3">
+            <a href="{% url 'home:index' %}" class="btn btn-info">Ir a Inicio</a>
+        </div>
+    </div>
 {% endblock content %}
