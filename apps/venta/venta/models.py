@@ -11,6 +11,7 @@ class Vendedor(models.Model):
     class Meta:
         verbose_name = "vendedor"
         verbose_name_plural = "vendedores"
+        app_label = "venta"
 
     def __str__(self):
         return f"{self.usuario.username}"
