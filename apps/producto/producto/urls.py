@@ -5,15 +5,35 @@ from . import views
 # *********** URLS basadas en funciones
 urlpatterns = [
     path("", views.index, name="index"),
-    #     path("producto_categoria_listado/", views.producto_categoria_list, name="producto_categoria_list"),
-    #     path("producto_categoria_create/", views.producto_categoria_create, name="producto_categoria_create"),
-    #     path("producto_categoria_delete/<int:id>", views.producto_categoria_delete, name="producto_categoria_delete"),
-    #     path("producto_categoria_update/<int:id>", views.producto_categoria_delete, name="producto_categoria_delete"),
-    # path("productocategoria/detail/<int:pk>", views.producto_categoria_detail, name="productocategoria_detail"),
+    path(
+        "producto_categoria_listado/",
+        views.productoCategoriaList,
+        name="productoCategoriaList",
+    ),
+    path(
+        "producto_categoria_create/",
+        views.producto_categoria_create,
+        name="producto_categoria_create",
+    ),
+    path(
+        "producto_categoria_delete/<int:id>",
+        views.producto_categoria_delete,
+        name="producto_categoria_delete",
+    ),
+    path(
+        "producto_categoria_update/<int:id>",
+        views.producto_categoria_delete,
+        name="producto_categoria_delete",
+    ),
+    path(
+        "productocategoria/detail/<int:pk>",
+        views.producto_categoria_detail,
+        name="productocategoria_detail",
+    ),
 ]
 
 # *********** URLS basadas en clases
-urlpatterns += [
+"""urlpatterns += [
     # path("", views.IndexView.as_view(), name="index"),
     path(
         "productocategoria/list/",
@@ -40,4 +60,4 @@ urlpatterns += [
         views.ProductoCategoriaDetail.as_view(),
         name="productocategoria_detail",
     ),
-]
+]"""

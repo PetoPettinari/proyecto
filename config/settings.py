@@ -51,8 +51,8 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     "cliente",
     "home",
-    "producto",
-    "venta",
+    "apps.producto",
+    "apps.venta",
 ]
 
 
@@ -122,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "es"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "AMERICA/ARGENTINA/MENDOZA"
 
 USE_I18N = True
 

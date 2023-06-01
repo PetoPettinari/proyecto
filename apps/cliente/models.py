@@ -11,17 +11,16 @@ class Pais(models.Model):
 class Cliente(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
-    nacimiento = models.CharField(null=True)
+    nacimiento = models.CharField(max_length=50, null=True)
     pais_origen_id = models.ForeignKey(Pais, on_delete=models.SET_NULL, null=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.nombre} {self.apellido}"
 
 
 class Post(models.Model):
     modelo = models.TextField(max_length=100)
     instrumento = models.TextField(max_length=100)
-    content = models.TextField()
     content = models.TextField()
 
     def __str__(self):
@@ -31,8 +30,8 @@ class Post(models.Model):
 class Autor(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
-    nacimiento = models.CharField(null=True)
+    nacimiento = models.CharField(max_length=50, null=True)
     pais_origen_id = models.ForeignKey(Pais, on_delete=models.SET_NULL, null=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.nombre} {self.apellido}"

@@ -15,7 +15,7 @@ def index(request: HttpRequest) -> HttpResponse:
     return render(request, "producto/index.html")
 
     # class IndexView(TemplateView):
-    template_name = "producto/index.html"
+    template_name = productoCategoriaList
 
 
 # *
@@ -30,7 +30,7 @@ def index(request: HttpRequest) -> HttpResponse:
 #     return render(request, "producto/productocategoria_list.html", context)
 
 
-class ProductoCategoriaList(ListView):
+class productoCategoriaList(ListView):
     model = models.ProductoCategoria
 
     def get_queryset(self):
@@ -60,7 +60,7 @@ class ProductoCategoriaList(ListView):
 #     return render(request, "producto/productocategoria_form.html", {"form": form})
 
 
-class ProductoCategoriaCreate(CreateView):
+class producto_categoria_create(CreateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm
     success_url = reverse_lazy("producto:index")
@@ -78,9 +78,9 @@ class ProductoCategoriaCreate(CreateView):
 #     return render(request, "producto/productocategoria_confirmdelete.html", {"categoria": categoria})
 
 
-class ProductoCategoriaDelete(DeleteView):
+class producto_categoria_delete(DeleteView):
     model = models.ProductoCategoria
-    success_url = reverse_lazy("producto:productocategoria_list")
+    success_url = reverse_lazy("producto:productoCategoriaList")
 
 
 # *
