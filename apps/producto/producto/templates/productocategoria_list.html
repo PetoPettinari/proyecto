@@ -17,7 +17,7 @@
 
         {% for categoria in object_list %}
             <ul>
-                <li>{{ categoria.nombre }}
+                <li>{{ producto.nombre }} {{ producto.precio}}
                     <a href="{% url 'producto:productocategoria_detail' categoria.id %}" class="btn btn-secondary">Ver detalle</a>
                     <a href="{% url 'producto:productocategoria_update' categoria.id %}" class="btn btn-primary">Actualizar</a>
                     <a href="{% url 'producto:productocategoria_delete' categoria.id %}" class="btn btn-danger">Eliminar</a>
