@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 from . import forms
 
 
@@ -9,8 +10,8 @@ def index(request):
 
 
 def crear_autor(request):
-    if request.method == "POST":
-        form = form.AutorForm(request.POST)
+    if request.method == "Autor":
+        form = form.AutorForm(request.Autor)
         if form.is_valid():
             form.save()("cliente:index")
     else:
