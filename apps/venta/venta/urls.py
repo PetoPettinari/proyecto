@@ -1,13 +1,26 @@
-from django.conf import settings
-from django.conf.urls.static import static
+from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import path
+from django.views.generic import TemplateView
 
 from . import views
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", TemplateView.as_view(template_name="venta/index.html"), name="index"),
+    path("venta/list/", views.VentaList.as_view(), name="venta_list"),
+    path("venta/detail/<int:pk>", views.VentaDetail.as_view(), name="venta_detail"),
+    path(
+        "venta/create/",
+        staff_member_required(views.VentaCreate.as_view()),
+        name="venta_create",
+    ),
+    path(
+        "venta/delete/<int:pk>",
+        staff_member_required(views.VentaDelete.as_view()),
+        name="venta_delete",
+    ),
+    path(
+        "venta/update/<int:pk>",
+        staff_member_required(views.VentaUpdate.as_view()),
+        name="venta_update",
+    ),
 ]
-
-#! Este código es válido en un entorno de desarrollo (DEBUG=True). Noo utilizarlo en un entorno de producción.
-if settings.DEBUG == True:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

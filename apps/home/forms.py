@@ -6,13 +6,13 @@ from django.contrib.auth.models import User
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ["username", "email", "password1", "password2"]
+        fields = ["username", "password1", "password2"]
         widgets = {
             "username": forms.TextInput(attrs={"class": "form-control"}),
-            "email": forms.TextInput(attrs={"class": "form-control"}),
             "password1": forms.PasswordInput(attrs={"class": "form-control"}),
             "password2": forms.PasswordInput(attrs={"class": "form-control"}),
         }
+        help_texts = {k: "" for k in fields}
 
 
 class CustomAuthenticationForm(AuthenticationForm):
@@ -23,3 +23,4 @@ class CustomAuthenticationForm(AuthenticationForm):
             "username": forms.TextInput(attrs={"class": "form-control"}),
             "password": forms.PasswordInput(attrs={"class": "form-control"}),
         }
+        help_texts = {k: "" for k in fields}

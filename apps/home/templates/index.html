@@ -1,18 +1,38 @@
 {% extends 'home/base.html' %}
 
+{% load static %}
+
 {% block content %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#!">Instrumentos Musicales</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
-            </ul>
+    {% if user.is_authenticated %}
+        <h3 class="d-flex align-items-center">Bienvenido {{ user.username }}
+            {% if user.vendedor.avatar.url %}
+                <img src="{{ user.vendedor.avatar.url }}" alt="Avatar" style="height: 30px;" /> 
+            {% else %}
+                <img src="{% static 'venta/avatares.png' %}" alt="avatar" style="height: 30px;" />
+            {% endif %}  
+        </h3>
+    {% endif %}
+    {% if messages %}{{ messages }}{% endif %}
+    {% if user.is_staff %}
+        <div class="row">
+            <a href="{% url 'admin:index' %}" class="btn btn-outline-dark">Administración</a>
+        </div>
+        <div class="row">
+            <a href="{% url 'home:register' %}" class="btn btn-outline-dark">Registrar nuevo vendedor</a>
+        </div>
+    {% endif %}
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7">
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'home/img/caja-de-pandora.jpg' %}" alt="Presentación" />
+        </div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">La Caja de Pandora</h1>
+            <p>
+                La Caja de Pandora es un lugar mágico donde tus sueños se hacen realidad.
+                Nuestro catálogo está lleno de tesoros y maravillas esperando a ser
+                descubiertos por nuestros clientes más aventureros.
+            </p>
+            <a class="btn btn-info" href="https://wa.me/5492619999999">WhatsApp</a>
         </div>
     </div>
-</nav>
 {% endblock content %}
