@@ -51,8 +51,8 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     "cliente",
     "home",
-    "apps.producto",
-    "apps.venta",
+    "producto",
+    "venta",
 ]
 
 
@@ -144,7 +144,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 from django.urls import reverse_lazy
 
-LOGIN_URL = reverse_lazy ("home:login")
+LOGIN_URL = reverse_lazy("home:login")
 LOGIN_REDIRECT_URL = reverse_lazy("home:index")
 
 

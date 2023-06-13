@@ -5,10 +5,11 @@ from django.urls import include, path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("home/", include(("home.urls", "home"))),
-    path("producto/", include(("apps.producto.producto.urls", "producto"))),
-    path("venta/", include(("apps.venta.venta.urls", "venta"))),
-    path("cliente/", include(("cliente.urls", "cliente"))),
+    path("", include(("home.urls", "home"))),
+    path("producto/", include(("producto.producto.urls", "producto"))),
+    path("venta/", include(("venta.venta.urls", "venta"))),
 ]
+
+#! Este código es válido en un entorno de desarrollo (DEBUG=True). Noo utilizarlo en un entorno de producción.
 if settings.DEBUG == True:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
