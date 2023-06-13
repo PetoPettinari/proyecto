@@ -30,7 +30,7 @@ def index(request: HttpRequest) -> HttpResponse:
 #     return render(request, "producto/productocategoria_list.html", context)
 
 
-class productoCategoriaList(ListView):
+class ProductoCategoriaList(ListView):
     model = models.ProductoCategoria
 
     def get_queryset(self):
@@ -60,7 +60,7 @@ class productoCategoriaList(ListView):
 #     return render(request, "producto/productocategoria_form.html", {"form": form})
 
 
-class producto_categoria_create(CreateView):
+class ProductoCategoriaCreate(CreateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm
     success_url = reverse_lazy("producto:index")
@@ -78,7 +78,7 @@ class producto_categoria_create(CreateView):
 #     return render(request, "producto/productocategoria_confirmdelete.html", {"categoria": categoria})
 
 
-class producto_categoria_delete(DeleteView):
+class ProductoCategoriaDelete(DeleteView):
     model = models.ProductoCategoria
     success_url = reverse_lazy("producto:productoCategoriaList")
 
@@ -111,7 +111,7 @@ class ProductoCategoriaUpdate(UpdateView):
 # *
 
 
-def producto_categoria_detail(request: HttpRequest, pk) -> HttpResponse:
+def ProductoCategoriaDetail(request: HttpRequest, pk) -> HttpResponse:
     categoria = models.ProductoCategoria.objects.get(id=pk)
     return render(
         request, "producto/productocategoria_detail.html", {"object": categoria}

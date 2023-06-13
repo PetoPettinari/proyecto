@@ -51,8 +51,8 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     "cliente",
     "home",
-    "producto",
-    "venta",
+    "producto.producto",
+    "venta.venta",
 ]
 
 

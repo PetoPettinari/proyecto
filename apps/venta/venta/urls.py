@@ -2,7 +2,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import path
 from django.views.generic import TemplateView
 
-from . import views
+from proyecto.apps.venta.venta import views
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="venta/index.html"), name="index"),

@@ -9,26 +9,26 @@ urlpatterns = [
     path(
         "productocategoria/detail/<int:pk>",
         views.ProductoCategoriaDetail.as_view(),
-        name="productocategoria_detail",
+        name="ProductoCategoriaDetail",
     ),
     path(
         "productocategoria/list/",
-        views.productoCategoriaList.as_view(),
-        name="productocategoria_list",
+        views.ProductoCategoriaList.as_view(),
+        name="ProductoCategorialist",
     ),
     path(
         "productocategoria/create/",
-        staff_member_required(views.producto_categoria_create.as_view()),
-        name="productocategoria_create",
+        staff_member_required(views.ProductoCategoriaCreate.as_view()),
+        name="ProductoCategoriaCreate",
     ),
     path(
         "productocategoria/delete/<int:pk>",
-        staff_member_required(views.producto_categoria_delete.as_view()),
-        name="productocategoria_delete",
+        staff_member_required(views.ProductoCategoriaDelete.as_view()),
+        name="ProductoCategoriaDelete",
     ),
     path(
         "productocategoria/update/<int:pk>",
         staff_member_required(views.ProductoCategoriaUpdate.as_view()),
-        name="productocategoria_update",
+        name="ProductoCategoriaUpdate",
     ),
 ]
