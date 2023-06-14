@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from . import models
 
-admin.site.site_title = "ProductoCategoria"
+admin.site.site_title = "producto"
 admin.site.site_header = " INSTRUMENTOS MUSICALES "
 
 
@@ -20,7 +20,9 @@ class ProductoCategoriaAdmin(admin.ModelAdmin):
     list_filter = ("nombre",)
     ordering = ("nombre",)
 
-    @admin.register(models.Producto)
+    @admin.register(
+        models.ProductoCategoria, product_class=models.ProductoCategoriaAdmin
+    )
     class ProductoAdmin(admin.ModelAdmin):
         list_display = (
             "categoria",
