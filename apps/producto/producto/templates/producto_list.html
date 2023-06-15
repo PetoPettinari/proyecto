@@ -1,7 +1,7 @@
 {% extends 'producto.producto/index.html' %}
 
 
-{% block title %} Lista de Categorías de Productos {% endblock title %}
+{% block title %} Lista de Productos {% endblock title %}
 
 {% block content_producto %}
 
@@ -18,9 +18,9 @@
         {% for producto in object_list %}
             <ul>
                 <li>{{ producto.nombre }}  ${{ producto.precio}}
-                    <a href="{% url 'producto:productocategoria_detail' categoria.id %}" class="btn btn-secondary">Ver detalle</a>
-                    <a href="{% url 'producto:productocategoria_update' categoria.id %}" class="btn btn-primary">Actualizar</a>
-                    <a href="{% url 'producto:productocategoria_delete' categoria.id %}" class="btn btn-danger">Eliminar</a>
+                    <a href="{% url 'producto:productocategoria_detail' producto.id %}" class="btn btn-secondary">Ver detalle</a>
+                    <a href="{% url 'producto:productocategoria_update' producto.id %}" class="btn btn-primary">Actualizar</a>
+                    <a href="{% url 'producto:productocategoria_delete' producto.id %}" class="btn btn-danger">Eliminar</a>  
                 </li>
             </ul>
         {% endfor %}

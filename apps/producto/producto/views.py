@@ -78,9 +78,9 @@ class ProductoCategoriaCreate(CreateView):
 #     return render(request, "producto/productocategoria_confirmdelete.html", {"categoria": categoria})
 
 
-class ProductoCategoriaDelete(DeleteView):
-    model = models.ProductoCategoria
-    success_url = reverse_lazy("producto:productoCategoriaList")
+class ProductoDelete(DeleteView):
+    model = models.Producto
+    success_url = reverse_lazy("producto:producto_list")
 
 
 # *
@@ -100,10 +100,10 @@ class ProductoCategoriaDelete(DeleteView):
 #     return render(request, "producto/productocategoria_form.html", {"form": form})
 
 
-class ProductoCategoriaUpdate(UpdateView):
-    model = models.ProductoCategoria
-    success_url = reverse_lazy("producto:productocategoria_list")
-    form_class = forms.ProductoCategoriaForm
+class ProductoUpdate(UpdateView):
+    model = models.Producto
+    success_url = reverse_lazy("producto:producto_list")
+    form_class = forms.ProductoForm
 
 
 # *
@@ -120,3 +120,13 @@ def ProductoCategoriaDetail(request: HttpRequest, pk) -> HttpResponse:
 
 class ProductoCategoriaDetail(DetailView):
     model = models.ProductoCategoria
+
+class productolist(ListView):
+    model = models.Producto
+   
+class ProductoCreate(CreateView):
+    model = models.Producto
+    form_class = forms.ProductoForm
+    success_url = reverse_lazy("producto:index") 
+    
+    

@@ -31,5 +31,9 @@ urlpatterns = [
         staff_member_required(views.ProductoCategoriaUpdate.as_view()),
         name="ProductoCategoriaUpdate",
     ),
-    path("producto/create/", views.ProductoCreate.as_view(), name="ProductoCreate"),
+    path("Producto/create/", views.ProductoCreate.as_view(), name="producto_create"),
+    path("Producto/list/", views.ProductoList.as_view(), name="producto_list"),
+    path("Producto/detail/<int:pk>", views.Productodetail.as_view(), name="producto_detail"),
+    path("Producto/delete/<int:pk>", views.ProductoDelete.as_view(), name="producto_delete"),
+    path("Producto/update/<int:pk>", views.ProductoUpdate.as_view(), name="producto_update"),    
 ]
