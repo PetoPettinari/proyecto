@@ -31,4 +31,5 @@ urlpatterns = [
         staff_member_required(views.ProductoCategoriaUpdate.as_view()),
         name="ProductoCategoriaUpdate",
     ),
+    path("producto/create/", views.ProductoCreate.as_view(), name="ProductoCreate"),
 ]
