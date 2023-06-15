@@ -7,8 +7,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include(("home.urls", "home"))),
     path("cliente/", include(("cliente.urls", "cliente"))),
-    path("producto/", include(("producto.urls", "producto"))),
-    path("venta/", include(("venta.urls", "venta"))),
+    path("producto/", include(("producto.producto.urls", "producto"))),
+    path("venta/", include(("venta.venta.urls", "venta"))),
 ]
 
 #! Este código es válido en un entorno de desarrollo (DEBUG=True). Noo utilizarlo en un entorno de producción.

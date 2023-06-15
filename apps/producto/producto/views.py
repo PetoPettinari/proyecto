@@ -63,7 +63,7 @@ class ProductoCategoriaList(ListView):
 class ProductoCategoriaCreate(CreateView):
     model = models.ProductoCategoria
     form_class = forms.ProductoCategoriaForm
-    success_url = reverse_lazy("producto:index")
+    success_url = reverse_lazy("producto.producto:index")
 
 
 # *

@@ -1,0 +1,17 @@
+{% extends 'producto.producto/index.html' %}
+
+
+{% block title %} Productos {% endblock title %}
+
+{% block content_producto %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div> class="d-grid gap-3"
+            <button type="submi" class="btn btn-success">Guardar</button>
+            {% include 'producto.producto/index_back.html' %}
+        </div>
+    </form>
+
+    
+{% endblock content_producto %}
